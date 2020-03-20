@@ -13,7 +13,15 @@ header {
   width: 100%;
   background: #002651;
 }
-
+header img {
+  width: 250px;
+  float: left;
+}
+#map img {
+  width: 100%;
+  z-index: -10;
+  position: absolute;
+}
 header button {
   outline: none;
   color: white;
@@ -71,4 +79,5 @@ header button:hover {
 
 ::placeholder {
   font-size: 15px;
+  color: white;
 }
