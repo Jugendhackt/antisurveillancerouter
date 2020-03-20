@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/favicon.ico" />
     <title>Map | ASR</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/theme.css">
-  </head>
-  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
     <header>
-      <div id="header">
-        <div id="logo">
-          <img src="Ressources/ASR-Logo.png" />
+        <div id="header">
+            <div id="logo">
+                <img src="Resources/ASR-Logo.png" />
+            </div>
+            <div id="nav">
+                <a href="#">About</a>
+            </div>
         </div>
-        <div id="nav">
-<button href="#">About</button>
-        </div>
-      </div>
     </header>
     <main>
-      <div id="map">
-        <img src="Ressources/map-template.png" />
-      </div>
-      <div id="search_bar">
-        <div id="search_line">
-          <input type="text" required name="search_input" placeholder="e. g. Musterstraße 14, 01234" id="search_input"/>
+        <div id="map">
         </div>
-        <div id="search_btn">
-          <button href="#">Los</button>
+        <div id="search_bar">
+            <div id="search_line">
+                <input type="text" required name="search_input" placeholder="e. g. Musterstraße 14, 01234"
+                    id="search_input" />
+            </div>
+            <div id="search_btn">
+                <button href="#">Los</button>
+            </div>
         </div>
-      </div>
     </main>
-  </body>
+    <script src="js/main.js"></script>
+</body>
+
 </html>
