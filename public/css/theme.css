@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=theme.css.map */
+:root {
+  --theme-bg: #013168;
+  --theme-head: #002651;
+  --theme-gradient: linear-gradient(#8a2387, #e94057, #f27121);
+}
+/*# sourceMappingURL=theme.css.map */
