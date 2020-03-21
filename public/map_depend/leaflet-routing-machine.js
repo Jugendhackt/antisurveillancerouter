@@ -17918,7 +17918,8 @@ module.exports = L.Routing = {
 			polylinePrecision: 5,
 			useHints: true,
 			suppressDemoServerWarning: false,
-			language: 'en'
+            language: 'en',
+            block_area: null
 		},
 
 		initialize: function(options) {

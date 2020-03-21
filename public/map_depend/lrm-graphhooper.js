@@ -199,7 +199,9 @@ if (typeof module !== undefined) module.exports = polyline;
 		options: {
 			serviceUrl: 'https://graphhopper.com/api/1/route',
 			timeout: 30 * 1000,
-			urlParameters: {}
+			urlParameters: {
+				'ch.disable': true
+			}
 		},
 
 		initialize: function(apiKey, options) {
@@ -216,6 +218,7 @@ if (typeof module !== undefined) module.exports = polyline;
 				i;
 
 			options = options || {};
+
 			url = this.buildRouteUrl(waypoints, options);
 
 			timer = setTimeout(function() {
@@ -354,7 +357,6 @@ if (typeof module !== undefined) module.exports = polyline;
 			for (i = 0; i < waypoints.length; i++) {
 				locs.push('point=' + waypoints[i].latLng.lat + ',' + waypoints[i].latLng.lng);
 			}
-
 			baseUrl = this.options.serviceUrl + '?' +
 				locs.join('&');
 
