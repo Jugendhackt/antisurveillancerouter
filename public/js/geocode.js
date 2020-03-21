@@ -56,8 +56,22 @@ geocoder.geo = {
     }
 }
 
-function openOverlay() {
-    $('#start-or-dest')[0]
+var openElement;
+
+function openOverlay(el) {
+    $('#start-or-dest')[0].style.visibility = 'visible';
+    openElement = JSON.parse(el);
+}
+
+function selectAsStart() {
+    $('#start-or-dest')[0].visibility = 'hidden';
+    L.Routing.control({
+		waypoints: [
+			L.latLng(openElement.point.lat, openElement.point.long),
+			L.Routing.getWaypoints()[L.Routing.getWaypoints().length]
+		],
+		router: L.Routing.graphHopper(gh_token, {urlParameters: { 'ch.disable': true, block_area : '57.84, 11.95'}}),
+	})
 }
 const checkResize = () => {
     if ($('#search_input')[0].value !== '') {
@@ -68,7 +82,7 @@ const checkResize = () => {
             es.innerHTML = '';
             console.log(data);
             for (let i = 0; i < data.hits.length; i++) {
-                let element = `<div class="place" onclick="openOverlay()">
+                let element = `<div class="place" onclick="openOverlay(${JSON.stringify(data.hits[i])})">
                     <span class="name">${data.hits[i].name},</span><br/>
                     <span class="zipcode">${data.hits[i].postcode ? data.hits[i].postcode + ',' : ''}</span>
                     <span class="state">${data.hits[i].state},</span>
