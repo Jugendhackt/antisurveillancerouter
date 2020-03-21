@@ -71,6 +71,11 @@ header {
   z-index: 1000;
   top: 100px;
 
+  .elementcontainer {
+    display: none;
+    height: 0px;
+  }
+
   button {
     outline: none;
     text-decoration: none;
@@ -92,6 +97,27 @@ header {
   &.high {
     height: calc(100vh - 100px);
     background: #002651;
+
+    .elementcontainer {
+      display: block;
+      width: 100%;
+      height: calc(100% - 70px);
+      background: white;
+      margin-top: 70px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-top: 20px;
+
+      .place {
+        width: 100%;
+        min-height: 65px;
+        font-family: Arial, Helvetica, sans-serif;
+
+        span.name {
+          font-weight: bold;
+        }
+      }
+    }
   }
 
   #search_input {
