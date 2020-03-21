@@ -91,6 +91,19 @@ header {
 
   &.high {
     height: calc(100vh - 100px);
+    background: #002651;
+  }
+
+  #search_input {
+    &:valid {
+      &::after {
+        content: 'abc';
+        z-index: 10000;
+        border-bottom: 2px solid green;
+        width: 210px;
+        height: 100%;
+      }
+    }
   }
 }
 

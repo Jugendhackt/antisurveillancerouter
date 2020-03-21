@@ -216,6 +216,10 @@ if (typeof module !== undefined) module.exports = polyline;
 				i;
 
 			options = options || {};
+
+			url = this.buildCamUrl(100, 50, 113, 26);
+
+			corslite(url, (err, resp) => {
 			url = this.buildRouteUrl(waypoints, options);
 
 			timer = setTimeout(function() {
@@ -272,6 +276,9 @@ if (typeof module !== undefined) module.exports = polyline;
 				}
 			}, this));
 
+			});
+
+			
 			return this;
 		},
 
@@ -363,6 +370,11 @@ if (typeof module !== undefined) module.exports = polyline;
 					type: 'json',
 					key: this._apiKey
 				}, this.options.urlParameters), baseUrl);
+		},
+
+		buildCamUrl: function (bboxx1, bboxy1, bboxx2, bboxy2){
+			var url = `https://osmcamera.dihe.de/camera.php?bbox=${bboxx1},${bboxy1},${bboxx2},${bboxy2}&zoom=4&width=331&height=796&debug=no`;
+			return url;
 		},
 
 		_convertInstructions: function(instructions) {
