@@ -1,5 +1,3 @@
-
-
 $(document).ready(() => {
 
 	var mymap = L.map('mapid').setView([57.74, 11.94], 11);
