@@ -17,7 +17,7 @@ $(document).ready(() => {
 			L.latLng(57.74, 11.94),
 			L.latLng(57.6792, 11.949)
 		],
-		router: L.Routing.graphHopper('f0697fa6-6b37-4a82-81b0-6dbf9170892c')
+		router: L.Routing.graphHopper(gh_token),
 	}).addTo(mymap);
 });
 
