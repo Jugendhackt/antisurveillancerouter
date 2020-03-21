@@ -35,13 +35,26 @@ header a {
   border-radius: 10px;
   background: none;
   border: 1px solid white;
-  -webkit-transition-duration: .4s;
-          transition-duration: .4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
-header a:hover {
-  background: -webkit-gradient(linear, left top, right bottom, from(#8a2387), color-stop(#e94057), to(#f27121));
-  background: linear-gradient(to bottom right, #8a2387, #e94057, #f27121);
+header a ::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: var(--theme-gradient);
+  z-index: -1;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+  opacity: 0;
+}
+
+header a:hover ::before {
+  opacity: 1;
 }
 
 #map {
@@ -57,8 +70,8 @@ header a:hover {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 100px;
-  -webkit-transition-duration: .4s;
-          transition-duration: .4s;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
   -webkit-transition-timing-function: ease-in;
           transition-timing-function: ease-in;
 }

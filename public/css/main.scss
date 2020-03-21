@@ -33,16 +33,31 @@ header {
     border-radius: 10px;
     background: none;
     border: 1px solid white;
-    transition-duration: .4s;
+    transition-duration: 0.4s;
+
+    ::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-image: var(--theme-gradient);
+      z-index: -1;
+      transition: opacity 0.5s linear;
+      opacity: 0;
+    }
 
     &:hover {
-      background: linear-gradient(to bottom right, #8a2387, #e94057, #f27121);
+      ::before {
+        opacity: 1;
+      }
     }
   }
 }
 
 #map {
-  background: url('../Resources/map-template.png');
+  background: url("../Resources/map-template.png");
   height: 100vh;
   width: 100vw;
   background-size: cover;
@@ -70,7 +85,7 @@ header {
     margin-top: 0.4em;
   }
 
-  transition-duration: .4s;
+  transition-duration: 0.4s;
   transition-timing-function: ease-in;
 
   &.high {
