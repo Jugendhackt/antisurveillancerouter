@@ -7,6 +7,85 @@ body {
   background: #013168;
 }
 
+main .overlay {
+  visibility: hidden;
+  position: fixed;
+  z-index: 200000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+}
+
+main .overlay .overlaybody {
+  min-height: 250px;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 25px;
+  border: 2px solid #999999;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px;
+  word-wrap: break-word;
+}
+
+main .overlay .overlaybody .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .overlay .overlaybody .buttons .button {
+  padding: 1em;
+  color: white;
+  background-color: #0099ff;
+  text-decoration: none;
+  width: 70px;
+  border-radius: 100px;
+  text-align: center;
+}
+
+main .overlay .overlaybody .buttons .button.button-sec {
+  color: black;
+  background: none;
+  border: inset solid 2px #999999;
+}
+
 header {
   height: 100px;
   width: 100%;

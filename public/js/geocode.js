@@ -56,6 +56,9 @@ geocoder.geo = {
     }
 }
 
+function openOverlay() {
+    $('#start-or-dest')[0]
+}
 const checkResize = () => {
     if ($('#search_input')[0].value !== '') {
         $('#search_bar').addClass('high');
@@ -65,7 +68,7 @@ const checkResize = () => {
             es.innerHTML = '';
             console.log(data);
             for (let i = 0; i < data.hits.length; i++) {
-                let element = `<div class="place">
+                let element = `<div class="place" onclick="openOverlay()">
                     <span class="name">${data.hits[i].name},</span><br/>
                     <span class="zipcode">${data.hits[i].postcode ? data.hits[i].postcode + ',' : ''}</span>
                     <span class="state">${data.hits[i].state},</span>
