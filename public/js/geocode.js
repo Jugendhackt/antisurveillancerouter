@@ -63,9 +63,12 @@ const checkResize = () => {
             var e = $(".elementcontainer");
             var es = e[0];
             es.innerHTML = '';
+            console.log(data);
             for (let i = 0; i < data.hits.length; i++) {
                 let element = `<div class="place">
                     <span class="name">${data.hits[i].name},</span><br/>
+                    <span class="zipcode">${data.hits[i].postcode ? data.hits[i].postcode + ',' : ''}</span>
+                    <span class="state">${data.hits[i].state},</span>
                     <span class="country">${data.hits[i].country}</span>
                 </div>`;
                 es.innerHTML += element;
