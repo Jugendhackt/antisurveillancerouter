@@ -200,7 +200,7 @@ if (typeof module !== undefined) module.exports = polyline;
 			serviceUrl: 'https://graphhopper.com/api/1/route',
 			timeout: 30 * 1000,
 			urlParameters: {
-				'ch.disable': true
+				'ch.disable': true,
 			}
 		},
 

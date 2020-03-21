@@ -17,7 +17,7 @@ $(document).ready(() => {
 			L.latLng(57.74, 11.94),
 			L.latLng(57.6792, 11.949)
 		],
-		router: L.Routing.graphHopper(gh_token),
+		router: L.Routing.graphHopper(gh_token, {urlParameters: { 'ch.disable': true, block_area : '57.84, 11.95'}}),
 	}).addTo(mymap);
 });
 
