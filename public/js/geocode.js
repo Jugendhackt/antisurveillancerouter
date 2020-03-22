@@ -64,14 +64,13 @@ function openOverlay(el) {
 }
 
 function selectAsStart() {
-    $('#start-or-dest')[0].visibility = 'hidden';
-    L.Routing.control({
-		waypoints: [
-			L.latLng(openElement.point.lat, openElement.point.long),
-			L.Routing.getWaypoints()[L.Routing.getWaypoints().length]
-		],
-		router: L.Routing.graphHopper(gh_token, {urlParameters: { 'ch.disable': true, block_area : '57.84, 11.95'}}),
-	})
+    $('#start-or-dest')[0].style.visibility = 'hidden';
+    routeControl.spliceWaypoints(0, 1, L.latLng(openElement.point.lat, openElement.point.lng));
+}
+
+function selectAsDest() {
+    $('#start-or-dest')[0].style.visibility = 'hidden';
+    routeControl.spliceWaypoints(-1, 1, L.latLng(openElement.point.lat, openElement.point.lng));
 }
 const checkResize = () => {
     if ($('#search_input')[0].value !== '') {
