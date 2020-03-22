@@ -65,12 +65,14 @@ function openOverlay(el) {
 
 function selectAsStart() {
     $('#start-or-dest')[0].style.visibility = 'hidden';
-    routeControl.spliceWaypoints(0, 1, L.latLng(openElement.point.lat, openElement.point.lng));
+    blockstart(L.latLng(openElement.point.lat, openElement.point.lng));
+    //routeControl.spliceWaypoints(0, 1, L.latLng(openElement.point.lat, openElement.point.lng));
 }
 
 function selectAsDest() {
     $('#start-or-dest')[0].style.visibility = 'hidden';
-    routeControl.spliceWaypoints(-1, 1, L.latLng(openElement.point.lat, openElement.point.lng));
+    blockdest(L.latLng(openElement.point.lat, openElement.point.lng));
+    //routeControl.spliceWaypoints(-1, 1, L.latLng(openElement.point.lat, openElement.point.lng));
 }
 const checkResize = () => {
     if ($('#search_input')[0].value !== '') {

@@ -17,7 +17,16 @@ $(document).ready(() => {
 			L.latLng(57.74, 11.94),
 			L.latLng(57.6792, 11.949)
 		],
-		router: L.Routing.graphHopper(gh_token, {urlParameters: { 'ch.disable': true, block_area : '57.84, 11.95'}}),
+		router: L.Routing.graphHopper(gh_token),
 	}).addTo(mymap);
 });
 
+function blockdest(point) {
+	routeControl._router = L.Routing.graphHopper(gh_token, {urlParameters: { 'ch.disable': true, block_area : '58.84, 13.95'}});
+	routeControl.spliceWaypoints(-1, 1, point);
+}
+
+function blockstart (point) {
+	routeControl._router = L.Routing.graphHopper(gh_token, {urlParameters: { 'ch.disable': true, block_area : '58.84, 13.95'}});
+	routeControl.spliceWaypoints(0, 1, point);
+}
