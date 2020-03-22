@@ -11,8 +11,8 @@ $(document).ready(() => {
 	    tileSize: 512,
 	    zoomOffset: -1
 	}).addTo(mymap);
-
-	L.Routing.control({
+	//NO VAR KEYWORD this must be global
+	routeControl = L.Routing.control({
 		waypoints: [
 			L.latLng(57.74, 11.94),
 			L.latLng(57.6792, 11.949)
