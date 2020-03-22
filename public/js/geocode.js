@@ -59,9 +59,8 @@ geocoder.geo = {
 var openElement;
 
 function openOverlay(el) {
-    console.log("hey");
     $('#start-or-dest')[0].style.visibility = 'visible';
-    openElement = JSON.parse(el);
+    openElement = el;
 }
 
 function selectAsStart() {
@@ -83,10 +82,8 @@ const checkResize = () => {
             var jstring;
             const regex = /"/g;
             es.innerHTML = '';
-            console.log(data);
             for (let i = 0; i < data.hits.length; i++) {
                 jstring = JSON.stringify(data.hits[i]).replace(regex,"'");
-                console.log(jstring);
                 let element = `<div class="place" onclick="openOverlay(${jstring})">
                     <span class="name">${data.hits[i].name},</span><br/>
                     <span class="zipcode">${data.hits[i].postcode ? data.hits[i].postcode + ',' : ''}</span>
