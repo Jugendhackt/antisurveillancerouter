@@ -1,5 +1,5 @@
 geocoder = {};
-gh_token = 'f0697fa6-6b37-4a82-81b0-6dbf9170892c'; /*Plz dont kill me*/ 
+gh_token = '/*insert api key here*/';
 
 geocoder.geo = {
     resCallback: null,
